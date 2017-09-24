@@ -1,0 +1,22 @@
+server:
+  port: 8888
+
+spring:
+  profiles:
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: ${CONFIG_SERVER_GIT}
+          username: ${CON_USR:root}
+          password: ${CON_PWD:$XXXXX}
+          basedir: build/config
+
+security:
+  basic:
+    enabled: true
+  user:
+    name: ${CLIENT_USR:user}
+    password: ${CLIENT_PWD:secret3}
+
